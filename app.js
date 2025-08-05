@@ -54,9 +54,9 @@ app.use('/uploads', express.static(uploadDir));
 app.use('/pdf', express.static(path.join(__dirname, 'invoices')));
 
 //default
-// app.use("/",async(req,res)=>{
-//     res.send("jay mataji")
-// })
+app.use("/",async(req,res)=>{
+    res.send("jay mataji")
+})
 
 //routes
 app.use("/api/user",userRouter)
