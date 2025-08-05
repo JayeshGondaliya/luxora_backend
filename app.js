@@ -18,7 +18,7 @@ import adminRouter from './routes/admin.js';
 import pdfRouter from './routes/pdf.js';
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'http://localhost:3001'], 
+  origin: ['https://luxora-frontend-psi.vercel.app', 'http://localhost:3001'], 
   credentials: true, 
 };
 app.use(cors(corsOptions));
