@@ -21,6 +21,7 @@ const corsOptions = {
   origin: ['https://luxora-frontend-psi.vercel.app', 'http://localhost:3001'], 
   credentials: true, 
 };
+app.use(cors(corsOptions)); 
 app.options('*', cors(corsOptions));
 app.use(cookieParser()); 
 
