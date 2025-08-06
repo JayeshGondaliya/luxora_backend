@@ -66,7 +66,7 @@ export const login=async(req,res)=>{
 res.cookie("userId", token, {
   httpOnly: true,      // JS cannot access this cookie
   secure: true,        // Only sent over HTTPS
-  sameSite: "lax",     // Helps prevent CSRF
+  sameSite: "none",     // Helps prevent CSRF
   maxAge: 24 * 60 * 60 * 1000 // 7 days
 });
 
