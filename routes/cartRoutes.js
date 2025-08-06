@@ -7,4 +7,4 @@ cartRouter.post("/addtocart",addToCart)
 cartRouter.post("/gettocart",userAuthentication,getCartItems)
 cartRouter.post("/updatetocart",userAuthentication,updateToCart)
 cartRouter.post("/deletetocart",userAuthentication,deleteToCart)
-export default cartRouter;      
+export default cartRouter;

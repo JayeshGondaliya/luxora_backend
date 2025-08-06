@@ -46,7 +46,7 @@ export const addToCart=async(req,res)=>{
 export const getCartItems = async (req, res) => {
     try {
           const {userId} = req.body;
-        console.log('User ID from Authentication Middleware:', userId); // Log userId to check if it's set correctly
+        console.log('User ID from Authentication Middleware:', userId); 
 
         if (!mongoose.Types.ObjectId.isValid(userId)) {
             return res.status(400).json({ success: false, message: "Invalid userId" });
