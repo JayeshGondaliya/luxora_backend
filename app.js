@@ -54,10 +54,7 @@ app.use('/uploads', express.static(uploadDir));
 
 app.use('/pdf', express.static(path.join(__dirname, 'invoices')));
 
-//default
-app.use("/",async(req,res)=>{
-    res.send("jay mataji")
-})
+
 
 //routes
 app.use("/api/user",userRouter)
@@ -68,6 +65,10 @@ app.use("/api/payments",paymentsRouter)
 app.use("/api/order",orderRouter)
 app.use("/api/admin",adminRouter)
 app.use('/api/pdf', pdfRouter);
+//default
+app.use("/",async(req,res)=>{
+    res.send("jay mataji")
+})
 //start server
 const PORT=process.env.PORT||3003
 const startServer = async () => {
