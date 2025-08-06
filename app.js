@@ -18,11 +18,10 @@ import adminRouter from './routes/admin.js';
 import pdfRouter from './routes/pdf.js';
 
 const corsOptions = {
-  origin: ['https://luxora-frontend-psi.vercel.app', 'http://localhost:3001'], 
+  origin: ['https://luxora-frontend-psi.vercel.app','http://localhost:3000',"http://localhost:3001"], 
   credentials: true, 
 };
 app.use(cors(corsOptions)); 
-app.options('*', cors(corsOptions));
 app.use(cookieParser()); 
 
 
@@ -69,9 +68,7 @@ app.use('/api/pdf', pdfRouter);
 // app.use("/",async(req,res)=>{
 //     res.send("jay mataji")
 // })
-app.use("*", (req, res) => {
-    res.status(404).json({ message: "Route not found" });
-});
+
 //start server
 const PORT=process.env.PORT||3003
 const startServer = async () => {
