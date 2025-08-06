@@ -66,9 +66,12 @@ app.use("/api/order",orderRouter)
 app.use("/api/admin",adminRouter)
 app.use('/api/pdf', pdfRouter);
 //default
-app.use("/",async(req,res)=>{
-    res.send("jay mataji")
-})
+// app.use("/",async(req,res)=>{
+//     res.send("jay mataji")
+// })
+app.use("*", (req, res) => {
+    res.status(404).json({ message: "Route not found" });
+});
 //start server
 const PORT=process.env.PORT||3003
 const startServer = async () => {
