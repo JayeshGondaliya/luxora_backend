@@ -102,7 +102,7 @@ export const adminLogout = async (req, res) => {
         });
   }
       );
-  res.status(200).json({success:true,message:"admin logout"});
+return  res.status(200).json({success:true,message:"admin logout"});
   } catch (err) {
     return res.status(500).json({ message: 'Logout failed', error: err.message });
   }
