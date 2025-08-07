@@ -8,12 +8,7 @@ adminRouter.post('/register', adminRegister)
 adminRouter.post('/adminLogin', adminLogin)
 adminRouter.post('/adminLogout', adminLogout)
 adminRouter.get("/get-admin", AdminAuthentication, (req, res) => {
-let isAdmin=req.cookies.admintoken;
-if(isAdmin){
-return res.status(200).json({success:true,isAdmin:true,data:req.admin})
-}else{
-return res.status(400).json({success:false,isAdmin:false})
-}
+  res.status(200).json({ success:true,adminId: req.admin.adminId });
 });
 
 export default adminRouter;
