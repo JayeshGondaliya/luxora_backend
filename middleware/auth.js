@@ -95,7 +95,13 @@ export const logout = async (req, res) => {
 
 export const adminLogout = async (req, res) => {
   try {
-      res.clearCookie('admintoken');
+      res.clearCookie('admintoken',{ res.clearCookie('admintoken', {
+            httpOnly: true,
+            secure:true,
+            sameSite: "none",
+        });
+  }
+      );
   res.send('Logged out and cookie cleared');
   } catch (err) {
     return res.status(500).json({ message: 'Logout failed', error: err.message });
