@@ -2,10 +2,13 @@ import Product from '../models/product.js';
 
 export const addProduct = async (req, res) => {
   try {
+    console.log("1234567890");
+    
     const { name, description, price, quantity, category, discount, ratings } = req.body;
-    const image = req.file ? req.file.originalname : null;
-
-    if (!name || !description || !price || !quantity || !category || !image) {
+  
+ const imageUrl = req.file?.path;
+    const publicId = req.file?.filename;
+    if (!name || !description || !price || !quantity || !category || !imageUrl) {
       return res.status(400).json({ success: false, message: 'All required fields including image must be provided.' });
     }
 
@@ -22,7 +25,8 @@ export const addProduct = async (req, res) => {
       category,
       discount,
       ratings,
-      image:`http://localhost:8081/uploads/${image}`,
+      image: imageUrl,
+      imagePublicId: publicId 
     });
 
     await newProduct.save();
@@ -65,8 +69,10 @@ export const getProduct=async(req,res)=>{
 export const editProduct=async(req,res)=>{
   try {
     const {productId}=req.params;
- const { name, description, price, quantity, category, discount, ratings } = req.body;
-    const image = req.file ? req.file.originalname : null;
+    
+    const { name, description, price, quantity, category, discount, ratings } = req.body;
+    // const image = req.file ? req.file.originalname : null;
+    const imageUrl = req.file?.path;
 
     if(!productId){
       return res.status(400).json({success:false,message:"required productId"})
@@ -82,7 +88,7 @@ export const editProduct=async(req,res)=>{
     product.category=category;
     product.discount=discount;
     product.ratings=ratings;
-    product.image=`http://localhost:8081/uploads/${image}`
+    product.image=imageUrl
     await product.save()
     return res.status(200).json({success:true,data:product})
   } catch (error) {
