@@ -66,9 +66,9 @@ app.use("/api/admin",adminRouter)
 app.use('/api/pdf', pdfRouter);
 app.use("/api/assistant", geminiRouter);
 //default
-// app.use("/",async(req,res)=>{
-//     res.send("jay mataji")
-// })
+app.use("/",async(req,res)=>{
+    res.send("jay mataji")
+})
 
 app.use((err, req, res, next) => {
   if (err instanceof multer.MulterError) {
