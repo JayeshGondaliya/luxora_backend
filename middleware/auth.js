@@ -95,6 +95,7 @@ export const logout = async (req, res) => {
 
 export const adminLogout = async (req, res) => {
   try {
+<<<<<<< HEAD
     res.clearCookie('admintoken', {
       httpOnly: true,
       secure: true,
@@ -106,6 +107,14 @@ export const adminLogout = async (req, res) => {
       message: "Admin logout successfully"
     });
     
+=======
+      res.clearCookie('admintoken', {
+            httpOnly: true,
+            secure:true,
+            sameSite: "none",
+        });
+  return res.status(200).json({success:true,message:"admin logout"});
+>>>>>>> dfb7075 (Update A Ai-Assistant)
   } catch (err) {
     return res.status(500).json({
       success: false,

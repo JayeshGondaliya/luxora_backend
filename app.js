@@ -16,7 +16,8 @@ import orderRouter from './routes/orderRoutes.js';
 import authorised from './routes/authorised.js';
 import adminRouter from './routes/admin.js';
 import pdfRouter from './routes/pdf.js';
-
+import multer from 'multer';
+import geminiRouter from './utils/geminiController.js';
 const corsOptions = {
   origin: ['https://luxora-frontend-psi.vercel.app',"https://luxora-admin-ten.vercel.app",'http://localhost:3000',"http://localhost:3001"], 
   credentials: true, 
@@ -39,7 +40,6 @@ app.use(session({
 
 app.use(express.json());  
 app.use(express.urlencoded({ extended: true })); 
-
 //dotenv
 dotenv.config()
 
@@ -64,11 +64,22 @@ app.use("/api/payments",paymentsRouter)
 app.use("/api/order",orderRouter)
 app.use("/api/admin",adminRouter)
 app.use('/api/pdf', pdfRouter);
+app.use("/api/assistant", geminiRouter);
 //default
 // app.use("/",async(req,res)=>{
 //     res.send("jay mataji")
 // })
 
+app.use((err, req, res, next) => {
+  if (err instanceof multer.MulterError) {
+    // A Multer error occurred when uploading
+    return res.status(400).json({ message: err.message });
+  } else if (err) {
+    // An unknown error occurred
+    return res.status(500).json({ message: err.message });
+  }
+  next();
+});
 //start server
 const PORT=process.env.PORT||3003
 const startServer = async () => {

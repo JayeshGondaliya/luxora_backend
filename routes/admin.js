@@ -11,4 +11,5 @@ adminRouter.get("/get-admin", AdminAuthentication, (req, res) => {
   res.status(200).json({ success:true,adminId: req.admin.adminId });
 });
 
+
 export default adminRouter;
