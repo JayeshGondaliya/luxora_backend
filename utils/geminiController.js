@@ -23,26 +23,25 @@ If the user's message is about one of these pages:
 - Products → ${baseUrl}/products
 - Orders → ${baseUrl}/orders
 - Login → ${baseUrl}/login
-- allProduct → ${baseUrl}/productspage
+- All Products → ${baseUrl}/productspage
 
-Then reply with ONE short friendly sentence **and** include the FULL clickable link as HTML <a> tag like this:
-Taking you to your cart: <a href="${baseUrl}/cart">${baseUrl}/cart</a>
+Then reply with ONE short friendly sentence **and** include the FULL clickable link as HTML <a> tag with target="_blank" and rel="noopener noreferrer".
 
 Examples:
 User: Go to my cart
-Reply: Taking you to your cart: <a href="${baseUrl}/cart">${baseUrl}/cart</a>
+Reply: Taking you to your cart: <a href="${baseUrl}/cart" target="_blank" rel="noopener noreferrer">${baseUrl}/cart</a>
 
 User: Show me products
-Reply: Here are our products: <a href="${baseUrl}/products">${baseUrl}/products</a>
+Reply: Here are our products: <a href="${baseUrl}/products" target="_blank" rel="noopener noreferrer">${baseUrl}/products</a>
 
 User: I want to check my orders
-Reply: Viewing your orders: <a href="${baseUrl}/orders">${baseUrl}/orders</a>
+Reply: Viewing your orders: <a href="${baseUrl}/orders" target="_blank" rel="noopener noreferrer">${baseUrl}/orders</a>
 
-User: I want to check all product
-Reply: Viewing your orders: <a href="${baseUrl}/productspage">${baseUrl}/productspage</a>
+User: I want to check all products
+Reply: Here’s the full product catalog: <a href="${baseUrl}/productspage" target="_blank" rel="noopener noreferrer">${baseUrl}/productspage</a>
 
 User: I need to login
-Reply: Redirecting you to login: <a href="${baseUrl}/login">${baseUrl}/login</a>
+Reply: Redirecting you to login: <a href="${baseUrl}/login" target="_blank" rel="noopener noreferrer">${baseUrl}/login</a>
 
 Important:
 - If the user's message clearly matches ONLY "orders", show ONLY the orders link in the reply.
@@ -50,6 +49,7 @@ Important:
 
 User message: ${userMessage}
 `;
+
 
 
 
