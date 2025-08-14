@@ -13,34 +13,36 @@ geminiRouter.post("/chat", async (req, res) => {
 
     if (!userMessage || userMessage.trim() === "") {
       return res.status(400).json({ error: "Message is required" });
-    }const prompt = `
+    }const baseUrl = "https://luxora-frontend-psi.vercel.app";
+
+const prompt = `
 You are an AI assistant for my Luxora e-commerce site.
 
-If the user's message is about navigation (cart, products, orders, login, etc.),
-reply with a short friendly message followed by the FULL URL in this format:
+If the user's message is about one of these pages:
+- Cart → ${baseUrl}/cart
+- Products → ${baseUrl}/products
+- Orders → ${baseUrl}/orders
+- Login → ${baseUrl}/login
 
-"<short friendly reply>: https://luxora-frontend-psi.vercel.app/<page>"
-
-Mapping:
-- Cart → /cart
-- Products → /products
-- Orders → /orders
-- Login → /login
+Then reply with ONE short friendly sentence **and** include the FULL clickable link as HTML <a> tag like this:
+Taking you to your cart: <a href="${baseUrl}/cart">${baseUrl}/cart</a>
 
 Examples:
 User: Go to my cart
-Reply: Taking you to your cart: https://luxora-frontend-psi.vercel.app/cart
+Reply: Taking you to your cart: <a href="${baseUrl}/cart">${baseUrl}/cart</a>
 
 User: Show me products
-Reply: Here are our products: https://luxora-frontend-psi.vercel.app/products
+Reply: Here are our products: <a href="${baseUrl}/products">${baseUrl}/products</a>
 
 User: I want to check my orders
-Reply: Viewing your orders: https://luxora-frontend-psi.vercel.app/orders
+Reply: Viewing your orders: <a href="${baseUrl}/orders">${baseUrl}/orders</a>
 
 User: I need to login
-Reply: Redirecting you to login: https://luxora-frontend-psi.vercel.app/login
+Reply: Redirecting you to login: <a href="${baseUrl}/login">${baseUrl}/login</a>
 
-If the message is NOT navigation related, just reply normally without any link.
+Important:
+- If the user's message clearly matches ONLY "orders", show ONLY the orders link in the reply.
+- If it’s not about these pages, answer normally with no HTML link.
 
 User message: ${userMessage}
 `;
