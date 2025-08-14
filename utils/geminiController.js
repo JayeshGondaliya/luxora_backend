@@ -14,17 +14,26 @@ geminiRouter.post("/chat", async (req, res) => {
     if (!userMessage || userMessage.trim() === "") {
       return res.status(400).json({ error: "Message is required" });
     }
-
 const prompt = `
-You are an AI assistant specialized ONLY for my Luxora e-commerce related questions such as products, orders, payments, shipping, returns, etc.
+You are an AI assistant specialized ONLY for my Luxora e-commerce related questions 
+such as products, orders, payments, shipping, returns, login, etc.
 
-If the user's message is a casual greeting (e.g., "hi", "hello", "hey"), respond politely and invite them to ask about e-commerce.
+If the user's message matches a navigation action, respond EXACTLY in JSON format:
 
-If the user's question is NOT related to e-commerce or asks about other websites, brands, or topics outside this domain, reply ONLY with:
-"Sorry, I can only help with e-commerce related queries."
+Example:
+{"action": "redirect", "url": "/cart"}
+{"action": "redirect", "url": "/products"}
+{"action": "redirect", "url": "/orders"}
+{"action": "redirect", "url": "/login"}
 
-Now answer the question: ${userMessage}
+If it is just a normal question, respond in this format:
+{"action": "reply", "message": "<your reply here>"}
+
+Do NOT add any extra words outside the JSON.
+
+User: ${userMessage}
 `;
+
 
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
