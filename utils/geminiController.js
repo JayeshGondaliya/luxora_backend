@@ -20,10 +20,10 @@ such as products, orders, payments, shipping, returns, login, etc.
 Respond ONLY in valid JSON format with these rules:
 
 If the user wants to navigate to a page, respond with:
-{"url": "/cart"}
-{"url": "/products"}
-{"url": "/orders"}
-{"url": "/login"}
+{"url": "https://luxora-frontend-psi.vercel.app/cart"}
+{"url": "https://luxora-frontend-psi.vercel.app/products"}
+{"url": "https://luxora-frontend-psi.vercel.app/orders"}
+{"url": "https://luxora-frontend-psi.vercel.app/login"}
 
 If the user is asking a normal question, respond with:
 {"message": "<your reply here>"}
@@ -33,11 +33,12 @@ Rules:
 - Do NOT include any other text, explanation, or formatting.
 - Do NOT use markdown or code blocks.
 - Do NOT include trailing commas.
-- The "url" must match exactly one of the known routes.
+- The "url" must be a complete URL including https://luxora-frontend-psi.vercel.app
 - If unsure, return a "message".
 
 User message: ${userMessage}
 `;
+
 
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
