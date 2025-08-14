@@ -23,6 +23,7 @@ If the user's message is about one of these pages:
 - Products → ${baseUrl}/products
 - Orders → ${baseUrl}/orders
 - Login → ${baseUrl}/login
+- allProduct → ${baseUrl}/productspage
 
 Then reply with ONE short friendly sentence **and** include the FULL clickable link as HTML <a> tag like this:
 Taking you to your cart: <a href="${baseUrl}/cart">${baseUrl}/cart</a>
@@ -36,6 +37,9 @@ Reply: Here are our products: <a href="${baseUrl}/products">${baseUrl}/products<
 
 User: I want to check my orders
 Reply: Viewing your orders: <a href="${baseUrl}/orders">${baseUrl}/orders</a>
+
+User: I want to check all product
+Reply: Viewing your orders: <a href="${baseUrl}/productspage">${baseUrl}/productspage</a>
 
 User: I need to login
 Reply: Redirecting you to login: <a href="${baseUrl}/login">${baseUrl}/login</a>
