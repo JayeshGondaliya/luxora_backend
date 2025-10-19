@@ -244,7 +244,7 @@ const verifyUser=await verifyToken(userToken);
 
       return res.status(200).json({
         success: true,
-        message: "Verification code sent successfully.",
+        message: "Verification Code Sent SuccessFully...",
       });
     } else {
       return res.status(400).json({
