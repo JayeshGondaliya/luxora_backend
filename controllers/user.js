@@ -315,7 +315,7 @@ export const editprofile=async(req,res)=>{
     user.name=name;
     user.email=email;
     await user.save();
-    return res.status(200).json({success:true,message:"user profile updated successfully",data:user})
+    return res.status(200).json({success:true,message:"User Profile Updated SuccessFully",data:user})
   } catch (error) {
 console.log(error);
 return res.status(500).json({success:false,message:error.message})
