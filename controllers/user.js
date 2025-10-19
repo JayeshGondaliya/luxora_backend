@@ -249,7 +249,7 @@ const verifyUser=await verifyToken(userToken);
     } else {
       return res.status(400).json({
         success: false,
-        message: "Email already verified.",
+        message: "Email Already Verified.",
       });
     }
   } catch (error) {
