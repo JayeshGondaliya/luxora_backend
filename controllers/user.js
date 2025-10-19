@@ -265,7 +265,7 @@ try {
     const {verifyCode}=req.body
     const userToken=req.cookies.uid;
     if(!userToken){
-        return res.status(401).json({success:false,message:"please login first"})
+        return res.status(401).json({success:false,message:"Please Login First"})
     }
     const verifyTokenForUser=await verifyToken(userToken);
     const email=verifyTokenForUser.email;
