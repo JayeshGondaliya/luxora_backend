@@ -81,7 +81,6 @@ res.cookie("userId", token, {
     }
 }
 
-
 //forgot password
 export const forgotPassword=async(req,res)=>{
     try {
@@ -344,12 +343,12 @@ export const addAddress = async (req, res) => {
       });
     }
 
-    user.address = address; // ✅ fixed line
+    user.address = address; // fixed line
     await user.save();
 
     return res.status(200).json({
       success: true,
-      message: "Address saved successfully",
+      message: "Address Saved SuccessFully",
     });
   } catch (error) {
     console.log(error);
