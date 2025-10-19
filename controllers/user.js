@@ -304,7 +304,7 @@ export const editprofile=async(req,res)=>{
     const {userId}=req.params;
     const {name,email}=req.body;
     if(!userId){
-      return res.status(404).json({success:false,message:"userId is required"})
+      return res.status(404).json({success:false,message:"UserId Is Required"})
     }
 
     const user=await User.findById(userId)
