@@ -284,7 +284,7 @@ try {
 user.email_verify_expires = undefined;
 
       await user.save();
-       return res.status(200).json({ success: true, message: "Email verified successfully." });
+       return res.status(200).json({ success: true, message: "Email Verified SuccessFully." });
     }else {
       return res.status(400).json({ success: false, message: "Invalid or expired verification code." });
     }
