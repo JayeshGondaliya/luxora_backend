@@ -97,7 +97,7 @@ export const updateToCart=async(req,res)=>{
     try {
         const {productId,userId,quantity,size}=req.body;
         if(!productId||!userId){
-            return res.status(400).json({success:false,message:"all fields are required"})
+            return res.status(400).json({success:false,message:"All Fields Are Required"})
         }
         const cart=await Cart.findOne({userId});
         if(!cart){
