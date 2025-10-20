@@ -31,7 +31,7 @@ export const addToCart=async(req,res)=>{
             cart= new Cart({userId,items:[{productId,quantity,size}]})
             await cart.save()
         }
-        return res.status(200).json({success:true,message:"item added to cart"})
+        return res.status(200).json({success:true,message:"Items Added To Cart"})
     } catch (error) {
         console.log(error);
         return res.status(400).json({success:false,message:error.message})
