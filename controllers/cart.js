@@ -109,7 +109,7 @@ export const updateToCart=async(req,res)=>{
     }
         item.quantity=quantity
         await cart.save()
-        return res.status(200).json({ success: true, message: "Item updated successfully" });
+        return res.status(200).json({ success: true, message: "Item Upfate SuccessFully" });
     } catch (error) {
             return res.status(404).json({success:false,message:error.message})
         
