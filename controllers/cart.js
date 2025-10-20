@@ -5,7 +5,7 @@ export const addToCart=async(req,res)=>{
         const{userId,productId,quantity=1,size}=req.body;
 
         if(!userId||!productId||!size){
-            return res.status(400).json({success:false,message:"please provide all details"})
+            return res.status(400).json({success:false,message:"Please Provides All The Details"})
         }
 
         let cart=await Cart.findOne({userId})
