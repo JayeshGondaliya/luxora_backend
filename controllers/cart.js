@@ -49,7 +49,7 @@ export const getCartItems = async (req, res) => {
         console.log('User ID from Authentication Middleware:', userId); 
 
         if (!mongoose.Types.ObjectId.isValid(userId)) {
-            return res.status(400).json({ success: false, message: "Invalid userId" });
+            return res.status(400).json({ success: false, message: "Invalid UserId" });
         }
 
         const cart = await Cart.findOne({ userId })
