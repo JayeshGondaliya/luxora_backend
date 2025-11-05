@@ -33,7 +33,7 @@ export const adminLogin = async (req, res) => {
 
         const admin = await Admin.findOne({ email });
         if (!admin) {
-            return res.status(400).json({ success: false, message: "Admin not found" });
+            return res.status(400).json({ success: false, message: "Admin Not Found" });
         }
 
         const isValid = await verifyPassword(admin.password, password);
