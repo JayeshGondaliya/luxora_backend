@@ -57,7 +57,7 @@ export const getCartItems = async (req, res) => {
             .exec();
 
         if (!cart) {
-            return res.status(404).json({ success: false, message: "Cart Not Found" });
+            return res.status(404).json({ success: false, message: "Cart Not found" });
         }
 
         // Log cart to check if it contains the correct data
