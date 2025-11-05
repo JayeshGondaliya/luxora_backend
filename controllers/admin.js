@@ -38,7 +38,7 @@ export const adminLogin = async (req, res) => {
 
         const isValid = await verifyPassword(admin.password, password);
         if (!isValid) {
-            return res.status(401).json({ success: false, message: "Invalid credentials" });
+            return res.status(401).json({ success: false, message: "Invalid Credentials" });
         }
 
         const token = jwt.sign({ id: admin._id, email: admin.email }, process.env.JWT_SECRET_KEY, { expiresIn: "1d" });
