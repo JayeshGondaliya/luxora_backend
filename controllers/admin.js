@@ -7,7 +7,7 @@ export const adminRegister = async (req, res) => {
 
         const existingUser = await Admin.findOne({ email });
         if (existingUser) {
-            return res.json({ success: false, message: 'Email already exists' });
+            return res.json({ success: false, message: 'Email Already Exitst' });
         }
 
         const hashed = await hashing(password);
