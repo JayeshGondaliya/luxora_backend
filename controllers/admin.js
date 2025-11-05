@@ -50,7 +50,7 @@ export const adminLogin = async (req, res) => {
         });
         res.json({
             success: true,
-            message: "Login successful",
+            message: "Login SuccessFully",
             admin: {
                 id: admin._id,
                 name: admin.name,
