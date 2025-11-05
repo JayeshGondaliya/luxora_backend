@@ -20,7 +20,7 @@ export const adminRegister = async (req, res) => {
 
         await newUser.save();
 
-        res.json({ success: true, message: 'Admin registered successfully' });
+        res.json({ success: true, message: 'Admin Register SuccessFully' });
     } catch (err) {
         console.error(err);
         res.status(500).json({ success: false, message: 'Server error' });
