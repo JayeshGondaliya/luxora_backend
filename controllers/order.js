@@ -40,7 +40,7 @@ export const getAllOrders=async(req,res)=>{
   try {
     const allOrder=await Order.find({})
     if(allOrder.length<0){
-      return res.status(400).json({success:false,message:"No Orders"})
+      return res.status(400).json({success:false,message:"No orders"})
     }
     return res.status(200).json({success:true,data:allOrder})
   } catch (error) {
