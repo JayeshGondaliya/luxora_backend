@@ -66,7 +66,7 @@ export const getOrder = async (req, res) => {
             data: orders
         });
     } catch (err) {
-        res.status(500).json({ success: false, message: "Error fetching orders" });
+        res.status(500).json({ success: false, message: "Error Fetching Orders" });
     }
 };
 
