@@ -2,7 +2,7 @@ import Product from '../models/product.js';
 
 export const addProduct = async (req, res) => {
   try {
-    console.log("1234567890");
+    // console.log("1234567890");
     
     const { name, description, price, quantity, category, discount, ratings } = req.body;
   
