@@ -31,7 +31,7 @@ export const saveOrder = async (req, res) => {
 
     res.status(201).json(savedOrder);
   } catch (err) {
-    console.error("Error saving order:", err);
+    console.error("Error Saving Order:", err);
     res.status(500).json({ error: err.message });
   }
 };
