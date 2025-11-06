@@ -9,7 +9,7 @@ export const addProduct = async (req, res) => {
  const imageUrl = req.file?.path;
     const publicId = req.file?.filename;
     if (!name || !description || !price || !quantity || !category || !imageUrl) {
-      return res.status(400).json({ success: false, message: 'All Required fields including image must be provided.' });
+      return res.status(400).json({ success: false, message: 'All Required Fields including image must be provided.' });
     }
 
     //  const product = await Product.findOne({ image });
