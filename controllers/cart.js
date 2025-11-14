@@ -14,7 +14,7 @@ export const addToCart=async(req,res)=>{
                
             //if same items are exists in database so increase quantity
            const existItems = cart.items.find(para => para.productId.toString() === productId && para.size === size);
-            console.log("existItem");
+            console.log("existItems");
             console.log(existItems);
             
             
