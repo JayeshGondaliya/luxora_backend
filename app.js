@@ -16,7 +16,7 @@ import orderRouter from './routes/orderRoutes.js';
 import authorised from './routes/authorised.js';
 import adminRouter from './routes/admin.js';
 import pdfRouter from './routes/pdf.js';
-import multer from 'multer'
+import multer from 'multer';
 import geminiRouter from './utils/geminiController.js';
 const corsOptions = {
   origin: ['https://luxora-frontend-psi.vercel.app',"https://luxora-admin-ten.vercel.app",'http://localhost:3000',"http://localhost:3001"], 
