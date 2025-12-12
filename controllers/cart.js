@@ -2,7 +2,7 @@ import Cart from '../models/cart.js';
 import mongoose from 'mongoose';
 export const addToCart=async(req,res)=>{
    try{
-        const{userId,productId,quantity=1,size}=req.body
+        const{userId,productId,quantity=1,size}=req.body;
 
         if(!userId||!productId||!size){
             return res.status(400).json({success:false,message:"Please Provide All Details"})
