@@ -4,7 +4,7 @@ import { verifyToken } from "../utils/jwt.js";
 export const userAuthentication = async (req, res, next) => {
     try {
         if (req.cookies && req.cookies.userId) {
-            console.log("auth controller")
+            console.log("auth controller");
 
             //verify 
               const decoded =await verifyToken(req.cookies.userId);
