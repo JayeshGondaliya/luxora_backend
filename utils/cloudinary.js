@@ -11,7 +11,7 @@ cloudinary.config({
 });
 export const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  params: async (req, file) => 
+  params: async (req, file) => {
     return {
       folder: 'luxora_uploads',
       allowed_formats: ['jpg', 'png', 'jpeg', 'webp', 'pdf'],
