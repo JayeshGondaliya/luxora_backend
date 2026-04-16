@@ -28,7 +28,7 @@ const line_items = cartItems.map(item => {
       payment_method_types: ["card"], 
       mode: "payment", 
       line_items, 
-     success_url: 'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
+     success_url: 'https://luxora-frontend-psi.vercel.app/success?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: "http://localhost:3000/cancel", 
                   metadata: {
                 userId: userId,
